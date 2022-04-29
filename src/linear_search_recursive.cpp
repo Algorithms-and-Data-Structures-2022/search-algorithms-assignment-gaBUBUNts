@@ -12,8 +12,13 @@ namespace assignment {
     // Tips:
     // 1. Укажите случаи выхода из рекурсии: (а) обошли все элементы и (б) элемент найден.
     // 2. Вызовите рекурсивный метод с другим индексом.
-
-    return std::nullopt;
+    if (curr_index == -1) {
+      return std::nullopt;
+    }
+    if (data[curr_index] == search_element) {
+      return curr_index;
+    }
+    return recursive_helper(data, search_element, curr_index - 1);
   }
 
 }  // namespace assignment
